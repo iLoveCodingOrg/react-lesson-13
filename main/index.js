@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Printer from './Printer';
 
 class App extends React.Component{
     constructor(){
@@ -33,17 +34,15 @@ class App extends React.Component{
     componentWillMount(){
         console.log('componentWillMount');
     }
-
     componentDidMount(){
         console.log('componentDidMount');
     }
-
     render(){
         console.log('render');
-
         return (
             <div>
-                {this.state.text} <br />
+                <Printer input={this.state.text} />
+                <br />
                 <input type="text"
                     onChange={this.handleChange.bind(this)}
                     value={this.state.text} />
